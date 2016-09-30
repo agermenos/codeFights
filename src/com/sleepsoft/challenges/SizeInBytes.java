@@ -30,10 +30,32 @@ public class SizeInBytes extends BaseTest {
         System.out.print("test: " + value + ", " + unit + "\t");
         prepare(ComputerUnitsToByte(value, unit), expected);
     }
-
     @Test
-    public void test(){
+    public void test1(){
         // preTest(3, 1);
         preTest(12, "KB", "12288");
+
+    }
+    @Test
+    public void test2(){
+        preTest(5, "MB", "5242880");
+
+    }
+    @Test
+    public void test3(){
+        preTest(1, "P", "1125899906842624");
+
+    }
+    @Test
+    public void test4(){
+        preTest(51, "TB", "56075093016576");
+    }
+    @Test
+    public void test5(){
+        preTest(70, "KB", "71680");
+    }
+    @Test
+    public void test6(){
+        preTest(72, "KB", "73728");
     }
 }

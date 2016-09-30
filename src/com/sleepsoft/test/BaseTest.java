@@ -21,5 +21,6 @@ public class BaseTest {
     }
     public void prepare (String value, String expected){
         log("received: " + value + "\t expected: " + expected);
+        assert(value.equals(expected));
     }
 }

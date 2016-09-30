@@ -31,12 +31,10 @@ public class NumberJumps extends BaseTest {
 
     @Test
     public void test(){
-
         prepare(14,minJumpToReachEnd(14));
         prepare(12,minJumpToReachEnd(12));
         prepare(8,minJumpToReachEnd(8));
         prepare(6,minJumpToReachEnd(6));
         prepare(5,minJumpToReachEnd(5));
-
     }
 }

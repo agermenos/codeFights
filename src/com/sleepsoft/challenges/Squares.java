@@ -26,7 +26,7 @@ public class Squares extends BaseTest{
     }
     @Test
     public void test(){
-       // preTest(3, 1);
+        preTest(3, 1);
         preTest(15, 2);
         preTest(45, 3);
         preTest(388382828, 8);
