@@ -1,7 +1,5 @@
 package com.sleepsoft.test;
 
-import java.util.Date;
-
 /**
  * Created by agermenos on 8/19/16.
  */
