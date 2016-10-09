@@ -1,4 +1,4 @@
-package com.sleepsoft.challenges;
+package com.sleepsoft.challenges.uber;
 
 import com.sleepsoft.test.BaseTest;
 import org.junit.Test;
