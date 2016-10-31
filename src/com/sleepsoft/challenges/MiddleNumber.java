@@ -7,7 +7,8 @@ import org.junit.Test;
 
  Given two numbers n and m, find their digital average.
 
- The digital average can be calculated only if all digits in their sum are even. To obtain the digital average, each digit of this sum should be divided by 2.
+ The digital average can be calculated only if all digits in their sum are even. To obtain the digital average, each digit
+ of this sum should be divided by 2.
 
  If the digital average cannot be calculated, return -1 instead.
 
