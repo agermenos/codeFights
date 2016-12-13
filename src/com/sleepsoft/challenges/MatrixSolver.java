@@ -9,11 +9,14 @@ import java.util.Arrays;
  */
 public class MatrixSolver {
     Object equationSystem(String[] e) {
-        int i=0;
+        int i=0; int rows=0, cols =0;
         double[][]A=new double[4][3];double[]B=new double[3];double[]X=new double[3];
         for (String eq:e) {
-            "".join("x",e).split("x|y|z=");
-            String chars[] = eq.replaceAll("x|y|z","").replace("-","--").split("\\+|-|=");
+            String chars[] = eq.split("x|y|z");
+            for (String element:chars) {
+                A[cols++][rows] = Long.valueOf(element.replace("=",""));
+            }
+            rows++; cols=0;
         };
         return null;
 
