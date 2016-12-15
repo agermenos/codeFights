@@ -1,5 +1,7 @@
 package com.sleepsoft.challenges;
 
+import org.junit.Test;
+
 import java.util.*;
 
 /**
@@ -36,41 +38,43 @@ Constraints:
 Array of chained names.
  */
 public class NameChainer {
-    String[] chainNames(String[] names) {
-        List<String> nameList = new ArrayList<>();
-        Map<Character, String> startMap = new HashMap<>();
-        Map<Character, String> endMap = new HashMap<>();
-        for (String name:names){
-            startMap.put(name.toLowerCase().charAt(0), name);
-            endMap.put(name.toLowerCase().charAt(name.length()-1), name);
-        }
-        String baseName = getBaseName(startMap, endMap);
-        nameList.add(baseName);
-        while (baseName!=null) {
-            Character key = baseName.charAt(baseName.length()-1);
-            baseName=startMap.get(key);
-            if (baseName!=null) {
-                nameList.add(baseName);
-                startMap.remove(key);
-            }
-        }
-        return Arrays.copyOf(nameList.toArray(), nameList.toArray().length, String[].class);
+    public String[] chainNames(String[] names){
+        LinkedList<String> deque = new LinkedList<>();
+        deque.add(names[0]);
+        deque = getList(names[0], names, deque);
+        return deque.toArray(new String[]{});
     }
 
-    private String getBaseName(Map<Character, String> startMap, Map<Character, String> endMap) {
-        for (Character letter:startMap.keySet()) {
-            if (!endMap.containsKey(letter)) return startMap.get(letter);
+    public LinkedList<String> getList(String name, String[] names, LinkedList<String> deque){
+        ArrayList<String> rudeList = new ArrayList<>(Arrays.asList(names));
+        rudeList.remove(name);
+        Optional<String> oStartName = rudeList.stream().filter(sName -> sName.endsWith(Character.toLowerCase(name.charAt(0))+"")).findAny();
+        Optional<String> oEndName = rudeList.stream().filter(sName->sName.startsWith(Character.toUpperCase(name.charAt(name.length()-1)) + "")).findAny();
+        if (oStartName.isPresent()) {
+            deque.addFirst(oStartName.get());
+            // try getting something above?
+            deque = getList(oStartName.get(), rudeList.toArray(new String[]{}), deque);
         }
-        return null;
+        if (oEndName.isPresent()) {
+            deque.addLast(oEndName.get());
+            // try getting something below?
+            deque = getList(oEndName.get(), rudeList.toArray(new String[]{}), deque);
+        }
+        return deque;
     }
 
-    public String display(String[]names){
-        StringBuilder result=new StringBuilder();
-        for (String name:names) {
-            result.append("\t" + name);
-        }
-        return result.toString();
+    private void prepare(String[] input){
+        System.out.println ("INPUT:");
+        System.out.println(Arrays.toString(input));
+        System.out.println("\nchainNames:");
+        System.out.println(Arrays.toString(chainNames(input)));
     }
 
-
+    @Test
+    public void test_1(){
+        String[] input = new String[] {"Raymond",  "Nora", "Daniel",
+                "Louie", "Peter", "Esteban"};
+        prepare(input);
+    }
 }
+
