@@ -15,12 +15,12 @@ public class MapOfWords {
         String[] cleanTextArray = cleanText.split(" ");
 
         Arrays.stream(cleanTextArray).forEach(word->{
-            Integer incidences=resultMap.get(word.toLowerCase());
-            if (incidences==null){
+            Integer indices=resultMap.get(word.toLowerCase());
+            if (indices==null){
                 resultMap.put(word.toLowerCase(), 1);
             }
             else {
-                resultMap.put(word.toLowerCase(), ++incidences);
+                resultMap.put(word.toLowerCase(), ++indices);
             }
         });
 
