@@ -20,9 +20,9 @@ public class MapOfWordsTwo {
 
     private Map<String, Long> mapNumberOfWords(String words) {
         Map<String, Long> returnMap =
-                Arrays.stream(words.replaceAll("['.,]", "").
+                Arrays.stream(words.
                         toLowerCase().
-                        split("[\\s]")).
+                        split("\\W+")).
                         sorted().
                         collect(groupingBy(Function.identity(), counting()));
         TreeMap<String, Long> sortedMap = new TreeMap<>(returnMap);

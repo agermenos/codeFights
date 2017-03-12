@@ -15,7 +15,7 @@ public class MapOfWordsThree {
     }
 
     private Map<String,Integer> mapNumberOfWords(String s) {
-        String[] words = s.replaceAll("['.,;]","").toLowerCase().split(" ");
+        String[] words = s.toLowerCase().split("['\\W]");
         Map<String, Integer> returnMap = new TreeMap<>();
         Arrays.sort(words);
         String previousWord = words[0];
