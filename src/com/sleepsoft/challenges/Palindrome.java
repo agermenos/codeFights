@@ -10,22 +10,34 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by agermenos on 3/11/2017.
  */
-public class Palyndrome {
+public class Palindrome {
 
-    public boolean check(char[] subText, int from, int to){
-        if (to>=from) return subText[from]==subText[to];
-        if (subText[from]==subText[to]){
-            return check(subText, from+1, to-1);
-        }
-        else return false;
+    public boolean checkPalindrome(char[] subText, int from, int to){
+        int totalChars=to-from+1;
+        String half1=new String(subText).substring(0,(totalChars/2));
+        String half2=new String(subText).substring(from+Integer.valueOf(totalChars/2), to);
+        return half1.equals(reverse(half2));
+//        if (to>=from) return subText[from]==subText[to];
+//        if (subText[from]==subText[to]){
+//            return checkPalindrome(subText, from+1, to-1);
+//        }
+//        else return false;
     }
 
-    public String checkPalyndrome(String text) {
+    private String reverse(String text) {
+        char[]reversed=new char[text.length()];
+        for (int k=0;k<text.length();k++){
+            reversed[k]=text.charAt(text.length()-k-1);
+        }
+        return new String(reversed);
+    }
+
+    public String checkPalindrome(String text) {
         char chrText[] = text.toCharArray();
         Map<Integer, Integer> palyndromeMap = new HashMap<>();
         for (int i=0; i<text.length()-2;i++){
             for (int k=chrText.length-1; k>i; k--){
-                if (check(chrText, i, k)) {
+                if (checkPalindrome(chrText, i, k)) {
                     palyndromeMap.put(i, k-i+1);
                     break;
                 }
@@ -39,7 +51,7 @@ public class Palyndrome {
 
     @Test
     public void testOne(){
-        assertEquals("araceca", new Palyndrome().checkPalyndrome("thisisaracecar"));
+        assertEquals("araceca", new Palindrome().checkPalindrome("thisisaracecar"));
     }
 }
 
