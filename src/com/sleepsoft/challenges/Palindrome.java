@@ -13,15 +13,15 @@ import static org.junit.Assert.assertEquals;
 public class Palindrome {
 
     public boolean checkPalindrome(char[] subText, int from, int to){
-        int totalChars=to-from+1;
-        String half1=new String(subText).substring(0,(totalChars/2));
-        String half2=new String(subText).substring(from+Integer.valueOf(totalChars/2), to);
-        return half1.equals(reverse(half2));
-//        if (to>=from) return subText[from]==subText[to];
-//        if (subText[from]==subText[to]){
-//            return checkPalindrome(subText, from+1, to-1);
-//        }
-//        else return false;
+//        int totalChars=to-from+1;
+//        String half1=new String(subText).substring(0,(totalChars/2));
+//        String half2=new String(subText).substring(from+Integer.valueOf(totalChars/2), to);
+//        return half1.equals(reverse(half2));
+        if (to>=from) return subText[from]==subText[to];
+        if (subText[from]==subText[to]){
+            return checkPalindrome(subText, from+1, to-1);
+        }
+        else return false;
     }
 
     private String reverse(String text) {
@@ -51,7 +51,7 @@ public class Palindrome {
 
     @Test
     public void testOne(){
-        assertEquals("araceca", new Palindrome().checkPalindrome("thisisaracecar"));
+        assertEquals("racecar", new Palindrome().checkPalindrome("thisisracecar"));
     }
 }
 
