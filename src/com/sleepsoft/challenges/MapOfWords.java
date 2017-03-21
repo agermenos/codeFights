@@ -24,7 +24,7 @@ public class MapOfWords {
 
         Map<String, Long>finalMap=new LinkedHashMap<>();
         resultMap.entrySet().stream().sorted(
-                Map.Entry.comparingByKey()).forEachOrdered(e->finalMap.put(e.getKey(), e.getValue())
+                Map.Entry.comparingByValue()).forEachOrdered(e->finalMap.put(e.getKey(), e.getValue())
         );
         return finalMap;
     }
