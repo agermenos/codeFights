@@ -9,7 +9,7 @@ class Solution {
         List<Integer> myList = new ArrayList<>();
         myList.addAll(Arrays.asList(newNums1));
         myList.addAll(Arrays.asList(newNums2));
-        Integer[] values = myList.parallelStream().sorted().collect(Collectors.toList()).toArray(Integer[]::new);
+        Integer[] values = myList.stream().sorted().collect(Collectors.toList()).toArray(Integer[]::new);
         if (values.length%2 == 0) {
             int top = values[(values.length+1)/2];
             int bottom = values[(values.length-1)/2];
