@@ -1,6 +1,6 @@
 package com.sleepsoft.challenges.uber.challenge_2;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 

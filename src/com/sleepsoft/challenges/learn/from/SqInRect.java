@@ -1,6 +1,6 @@
 package com.sleepsoft.challenges.learn.from;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.ArrayList;

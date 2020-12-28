@@ -1,6 +1,6 @@
 package com.sleepsoft.challenges.leetcode;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class BinaryTreeNonTree {
     public static String solution(long[] arr) {

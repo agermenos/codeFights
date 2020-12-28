@@ -1,12 +1,12 @@
 package com.sleepsoft.challenges;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.LinkedList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  Peter is taking his very first algebra class today. At the end of the lesson, the teacher posts a homework on the blackboard, and for each given problem he provides the answer so that students could check their results at home.

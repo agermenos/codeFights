@@ -1,7 +1,7 @@
 package com.sleepsoft.challenges;
 
 import com.sleepsoft.test.BaseTest;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.math.BigInteger;
 

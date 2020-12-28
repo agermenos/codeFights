@@ -1,6 +1,6 @@
 package com.sleepsoft.challenges;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * Created by agerm on 10/29/2016.

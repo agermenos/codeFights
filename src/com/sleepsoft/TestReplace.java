@@ -1,8 +1,9 @@
 package com.sleepsoft;
 
-import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Created by agermenos on 11/10/16.

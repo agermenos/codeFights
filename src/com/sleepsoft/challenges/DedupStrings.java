@@ -1,9 +1,10 @@
 package com.sleepsoft.challenges;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
-import static org.junit.Assert.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
 
 public class DedupStrings{
     public static String[] dup(String[] arr){

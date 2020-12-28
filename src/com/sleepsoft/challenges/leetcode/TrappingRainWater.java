@@ -1,6 +1,6 @@
 package com.sleepsoft.challenges.leetcode;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.

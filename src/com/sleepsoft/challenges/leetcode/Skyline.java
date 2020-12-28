@@ -1,8 +1,11 @@
 package com.sleepsoft.challenges.leetcode;
 
-import org.junit.Test;
 
-import java.util.*;
+import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.TreeMap;
 
 /***
  A city's skyline is the outer contour of the silhouette formed by all the buildings in that city when viewed from a distance. Now suppose you are given the locations and height of all the buildings as shown on a cityscape photo (Figure A), write a program to output the skyline formed by these buildings collectively (Figure B).

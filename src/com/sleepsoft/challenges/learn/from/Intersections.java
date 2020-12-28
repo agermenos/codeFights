@@ -1,10 +1,11 @@
 package com.sleepsoft.challenges.learn.from;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 /**
  * Created by agermenos on 11/7/16.
