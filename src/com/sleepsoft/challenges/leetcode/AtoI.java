@@ -5,7 +5,7 @@ import org.junit.Test;
 public class AtoI {
     public int myAtoi(String str) {
         int sign = 1;
-        if (str.matches("[+-]?\\s?[+-]?\\s?\\d*[.\\d*]?\\D*")) {
+        if (str.matches("[+-]?\\s*[+-]?[0-9]*\\.?[0-9]*")) {
             if (str.startsWith("\\D") && !str.startsWith("{+-}[1]")) return 0;
             str = str.replaceAll("\\s", "");
             str = str.replaceAll("[a-zA-Z]", "");
@@ -25,10 +25,10 @@ public class AtoI {
     @Test
     public void testAtoI(){
         AtoI atoI = new AtoI();
-        System.out.printf("Parsing \"3.15\" Result: %d\n" , atoI.myAtoi("3"));
-        System.out.printf("Parsing \"-91283472332\" Result: %d\n" , atoI.myAtoi("-91283472332"));
-        System.out.printf("Parsing \"42\" Result: %d\n" , atoI.myAtoi("42"));
-        System.out.printf("Parsing \"   -42\" Result: %d\n" ,atoI.myAtoi("-42"));
+        System.out.printf("Parsing \"3.14159\" Result: %d\n" , atoI.myAtoi("3.14159"));
+//        System.out.printf("Parsing \"-91283472332\" Result: %d\n" , atoI.myAtoi("-91283472332"));
+//        System.out.printf("Parsing \"42\" Result: %d\n" , atoI.myAtoi("42"));
+        System.out.printf("Parsing \"   -42\" Result: %d\n" ,atoI.myAtoi("       -42"));
         System.out.printf("Parsing \"4193 with words\" Result: %d\n" , atoI.myAtoi("4193 with words"));
         System.out.printf("Parsing \"words and 987\" Result: %d\n" , atoI.myAtoi("words and 987"));
     }

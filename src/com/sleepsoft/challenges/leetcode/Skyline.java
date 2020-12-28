@@ -25,6 +25,7 @@ import java.util.*;
  */
 public class Skyline {
     public List<List<Integer>> getSkyline(int[][] buildings) {
+        if (buildings==null || buildings.length==0) return new ArrayList<>();
         TreeMap<Integer, Integer> skyline = new TreeMap<>();
         for (int[] building:buildings){
             for (int x=building[0];x<building[1];x++) {
@@ -55,7 +56,8 @@ public class Skyline {
 
     @Test
     public void testSkyline(){
-        System.out.printf("Testing with the points [[2,9,10],[3,7,15],[5,12,12],[15,20,10],[19,24,8]]. \nExpected Output: [[2, 10], [3, 15], [7, 12], [12, 0], [15, 10], [20 ,8], [24, 0]].\nResponse Output: %s\n", getSkyline(new int[][]{{2,9,10},{3,7,15},{5,12,12},{15,20,10},{19,24,8}}));
-        System.out.printf("Testing with the points [[0,1,3]]. \nExpected Output: [[0,3],[1,0]].\nResponse Output: %s\n", getSkyline(new int[][]{{0,1,3}}));
+      System.out.printf("Testing with the points [[2,9,10],[3,7,15],[5,12,12],[15,20,10],[19,24,8]]. \nExpected Output: [[2, 10], [3, 15], [7, 12], [12, 0], [15, 10], [20 ,8], [24, 0]].\nResponse Output: %s\n", getSkyline(new int[][]{{2,9,10},{3,7,15},{5,12,12},{15,20,10},{19,24,8}}));
+//        System.out.printf("Testing with the points [[0,1,3]]. \nExpected Output: [[0,3],[1,0]].\nResponse Output: %s\n", getSkyline(new int[][]{{0,1,3}}));
+        System.out.printf("Testing with the points [[0,2147483647,2147483647]].\nExpected Output:[1,2]\nResponse Output: %s\n", getSkyline(new int[][]{{0,2147483647,2147483647}}));
     }
 }

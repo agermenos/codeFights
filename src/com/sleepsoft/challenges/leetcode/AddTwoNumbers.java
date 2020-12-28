@@ -11,30 +11,25 @@ package com.sleepsoft.challenges.leetcode;
  * }
  */
 class AddTwoNumbers {
+
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-       ListNode returnLN = doTheAdd(l1, l2);
-       ListNode finalLN = doBaseChange(returnLN);
-       return finalLN;
-    }
-
-    private ListNode doBaseChange(ListNode returnLN) {
-        if (returnLN.val>=10) {
-            returnLN.val = returnLN.val-10;
-            if (returnLN.next!=null)
-                returnLN.next.val++;
-            else
-                returnLN.next=new ListNode(1);
+        if (l1 == null && l2 == null) return null;
+        boolean carry = false;
+        if (l1 == null) l1 = new ListNode(0);
+        if (l2 == null) l2 = new ListNode(0);
+        int newVal = l1.val + l2.val;
+        if (newVal >= 10) {
+            newVal = newVal % 10;
+            carry = true;
         }
-        if (returnLN.next!=null) doBaseChange(returnLN.next);
-        return returnLN;
+        if (carry) {
+            if (l1.next == null) {
+                l1.next = new ListNode(1);
+            } else l1.next = new ListNode(l1.next.val + 1, l1.next.next);
+        }
+        return new ListNode(newVal, addTwoNumbers(l1.next, l2.next));
     }
 
-    private ListNode doTheAdd(ListNode l1, ListNode l2) {
-        if (l1.next==null && l2.next==null) return new ListNode(l1.val + l2.val);
-        if (l1.next==null) l1.next = new ListNode(0);
-        if (l2.next==null) l2.next= new ListNode(0);
-        return new ListNode (l1.val + l2.val, doTheAdd(l1.next, l2.next));
-    }
 
     class ListNode {
         int val;
